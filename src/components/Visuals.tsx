@@ -345,47 +345,50 @@ export function VisualRenderer({ slide }: VisualProps) {
 
     case 'curve':
       return (
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full h-full flex items-end justify-between pl-16 pr-28 pt-24 pb-20 max-w-4xl mx-auto relative">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full h-full p-12 max-w-4xl mx-auto relative">
           
-          <div className="absolute left-16 bottom-20 right-28 top-24 border-l-2 border-b-2 border-neutral-200">
-             <span className="absolute -left-12 top-1/2 -rotate-90 text-xs font-bold text-neutral-400 tracking-widest uppercase">Value</span>
-             <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-bold text-neutral-400 tracking-widest uppercase">Maturity</span>
-          </div>
+          {/* Inner Chart Box constrained heavily from all edges */}
+          <div className="absolute left-20 bottom-24 right-32 top-32 border-l-2 border-b-2 border-neutral-200 pointer-events-none">
+             
+             {/* Axis Labels */}
+             <span className="absolute -left-16 top-[50%] -translate-y-[50%] -rotate-90 text-xs font-bold text-neutral-400 tracking-widest uppercase">Value</span>
+             <span className="absolute -bottom-10 left-[50%] -translate-x-[50%] text-xs font-bold text-neutral-400 tracking-widest uppercase">Maturity</span>
 
-          <svg className="absolute inset-0 w-full h-full pl-16 pr-28 pt-24 pb-20" preserveAspectRatio="none" viewBox="0 0 100 100">
-            <motion.path 
-              initial={{ pathLength: 0, opacity: 0 }} 
-              animate={{ pathLength: 1, opacity: 1 }} 
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              d="M 0,100 C 40,100 60,0 100,0" 
-              fill="none" 
-              stroke="url(#gradient)" 
-              strokeWidth="1.5" 
-              strokeLinecap="round"
-            />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#d8b4fe" />
-                <stop offset="100%" stopColor="#9333ea" />
-              </linearGradient>
-            </defs>
-          </svg>
-          
-          <div className="absolute inset-0 pl-16 pr-28 pt-24 pb-20 pointer-events-none">
-            {['Manual', 'Structured', 'Assisted', 'Predictive'].map((stage, idx) => {
-              const positions = [
-                { left: '0%', bottom: '0%' },
-                { left: '30%', bottom: '15%' },
-                { left: '60%', bottom: '60%' },
-                { left: '100%', bottom: '100%' }
-              ];
-              return (
-                <motion.div key={idx} variants={itemVariants} className="absolute flex flex-col items-center gap-3 -translate-x-1/2 translate-y-1/2" style={{ left: positions[idx].left, bottom: positions[idx].bottom }}>
-                  <div className="w-5 h-5 rounded-full bg-purple-600 border-4 border-white shadow-[0_0_20px_rgba(147,51,234,0.6)]"></div>
-                  <span className="text-xs font-bold text-neutral-600 bg-white/90 px-3 py-1 rounded-full shadow-sm border border-neutral-100 uppercase tracking-wider">{stage}</span>
-                </motion.div>
-              );
-            })}
+             {/* Curve */}
+             <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <motion.path 
+                  initial={{ pathLength: 0, opacity: 0 }} 
+                  animate={{ pathLength: 1, opacity: 1 }} 
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  d="M 0,100 C 40,100 60,0 100,0" 
+                  fill="none" 
+                  stroke="url(#gradient)" 
+                  strokeWidth="2" 
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#d8b4fe" />
+                    <stop offset="100%" stopColor="#9333ea" />
+                  </linearGradient>
+                </defs>
+             </svg>
+             
+             {/* Data Points */}
+             {['Manual', 'Structured', 'Assisted', 'Predictive'].map((stage, idx) => {
+                const positions = [
+                  { left: '0%', bottom: '0%' },
+                  { left: '30%', bottom: '15%' },
+                  { left: '60%', bottom: '60%' },
+                  { left: '100%', bottom: '100%' }
+                ];
+                return (
+                  <motion.div key={idx} variants={itemVariants} className="absolute flex flex-col items-center gap-3 -translate-x-1/2 translate-y-1/2 pointer-events-auto" style={{ left: positions[idx].left, bottom: positions[idx].bottom }}>
+                    <div className="w-5 h-5 rounded-full bg-purple-600 border-4 border-white shadow-[0_0_20px_rgba(147,51,234,0.6)]"></div>
+                    <span className="text-xs font-bold text-neutral-600 bg-white/90 px-3 py-1 rounded-full shadow-sm border border-neutral-100 uppercase tracking-wider">{stage}</span>
+                  </motion.div>
+                );
+             })}
           </div>
         </motion.div>
       );
