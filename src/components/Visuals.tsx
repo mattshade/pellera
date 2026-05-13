@@ -332,7 +332,6 @@ export function VisualRenderer({ slide }: VisualProps) {
               className={`w-full max-w-2xl py-6 px-8 rounded-2xl flex items-center justify-between border-2 border-purple-100 shadow-md hover:-translate-y-1 hover:shadow-xl transition-all bg-white/80 backdrop-blur-sm relative overflow-hidden`}
               style={{ zIndex: 10 - idx }}
             >
-              <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(147,51,234,0.03)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white/80 to-transparent"></div>
               <span className="font-semibold text-neutral-800 text-lg flex items-center gap-4 relative z-10">
                 <div className="p-2 bg-purple-50 rounded-lg border border-purple-100 shadow-sm">{layer.icon}</div>
