@@ -145,11 +145,8 @@ export const presentationData: SlideData[] = [
     headline: "Move from process cleanup to intelligent opportunity orchestration",
     bullets: [
       "Build a guided opportunity workspace for AEs and delivery.",
-      "Introduce AI-assisted solution framing using prior engagements.",
-      "Add qualification scoring based on fit, urgency, data readiness, and delivery capacity.",
-      "Create reusable proposal blocks for AI and Data solutions.",
-      "Build executive dashboards for conversion quality, cycle time, and delivery confidence.",
-      "Connect post-project learnings back into future opportunity recommendations."
+      "Introduce AI-assisted solution framing and reusable proposal blocks.",
+      "Implement dynamic qualification scoring and executive dashboards."
     ],
     visualType: 'curve',
     notes: "Beyond the first 90 days, we move from just cleaning up the process to true intelligent orchestration. We can build a unified workspace where AEs and Delivery collaborate. We can use AI to recommend solution architectures based on past successful projects. We'll implement dynamic scoring that factors in Delivery capacity, and build out executive dashboards to track not just win rate, but win quality."
