@@ -345,14 +345,14 @@ export function VisualRenderer({ slide }: VisualProps) {
 
     case 'curve':
       return (
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full h-full flex items-end justify-between p-16 max-w-4xl mx-auto relative">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full h-full flex items-end justify-between pl-16 pr-28 pt-24 pb-20 max-w-4xl mx-auto relative">
           
-          <div className="absolute left-16 bottom-16 right-16 top-16 border-l-2 border-b-2 border-neutral-200">
+          <div className="absolute left-16 bottom-20 right-28 top-24 border-l-2 border-b-2 border-neutral-200">
              <span className="absolute -left-12 top-1/2 -rotate-90 text-xs font-bold text-neutral-400 tracking-widest uppercase">Value</span>
              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-bold text-neutral-400 tracking-widest uppercase">Maturity</span>
           </div>
 
-          <svg className="absolute inset-0 w-full h-full px-16 py-16" preserveAspectRatio="none" viewBox="0 0 100 100">
+          <svg className="absolute inset-0 w-full h-full pl-16 pr-28 pt-24 pb-20" preserveAspectRatio="none" viewBox="0 0 100 100">
             <motion.path 
               initial={{ pathLength: 0, opacity: 0 }} 
               animate={{ pathLength: 1, opacity: 1 }} 
@@ -371,7 +371,7 @@ export function VisualRenderer({ slide }: VisualProps) {
             </defs>
           </svg>
           
-          <div className="absolute inset-0 px-16 py-16 pointer-events-none">
+          <div className="absolute inset-0 pl-16 pr-28 pt-24 pb-20 pointer-events-none">
             {['Manual', 'Structured', 'Assisted', 'Predictive'].map((stage, idx) => {
               const positions = [
                 { left: '0%', bottom: '0%' },
