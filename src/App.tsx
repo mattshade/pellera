@@ -107,7 +107,7 @@ function App() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
                   <span className="text-purple-600 font-medium text-sm tracking-wider uppercase mb-4 block">
-                    {slide.chapter}
+                    // {slide.chapter}
                   </span>
                   <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.1] mb-8 text-neutral-900">
                     {slide.headline}
