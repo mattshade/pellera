@@ -11,8 +11,7 @@ function App() {
   const [isPresenterMode, setIsPresenterMode] = useState(false);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('presenter') === 'true') {
+    if (window.location.hash === '#presenter') {
       setIsPresenterMode(true);
     }
   }, []);
@@ -48,7 +47,7 @@ function App() {
   }, []);
 
   const openPresenterMode = useCallback(() => {
-    window.open(window.location.origin + window.location.pathname + '?presenter=true', 'presenter_window', 'width=1200,height=800');
+    window.open(window.location.href.split('#')[0] + '#presenter', 'presenter_window', 'width=1200,height=800');
   }, []);
 
   useEffect(() => {
