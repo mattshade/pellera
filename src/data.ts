@@ -6,7 +6,7 @@ export interface SlideData {
   audience?: string;
   tone?: string;
   bullets?: string[];
-  visualType: 'hero' | 'ribbon' | 'cards' | 'canvas' | 'timeline' | 'tiles' | 'roadmap' | 'process' | 'architecture' | 'curve' | 'matrix' | 'scale' | 'dashboard' | 'final';
+  visualType: 'hero' | 'ribbon' | 'cards' | 'canvas' | 'timeline' | 'tiles' | 'roadmap' | 'process' | 'architecture' | 'curve' | 'matrix' | 'scale' | 'dashboard' | 'final' | 'qa';
   visualData?: any;
   notes: string;
 }
@@ -205,5 +205,12 @@ export const presentationData: SlideData[] = [
     ],
     visualType: 'final',
     notes: "In closing, the solution to handoff chaos isn't buying a new tool. It's establishing a clearer operating system. By enforcing a qualification gate, capturing context once, and automating based on trusted data, we create a scalable model. This improves client confidence, protects our Delivery teams, and ultimately helps Sales move faster with less ambiguity. Thank you."
+  },
+  {
+    id: 14,
+    chapter: "14. Q&A",
+    headline: "Questions & Discussion",
+    visualType: 'qa',
+    notes: "That concludes the formal presentation. I'd love to open up the floor to any questions, feedback, or dive deeper into any specific areas of the strategy."
   }
 ];

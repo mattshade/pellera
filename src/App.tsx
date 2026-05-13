@@ -71,7 +71,7 @@ function App() {
   }
 
   const slide = presentationData[currentSlide];
-  const isFullScreen = slide.visualType === 'hero' || slide.visualType === 'final';
+  const isFullScreen = slide.visualType === 'hero' || slide.visualType === 'final' || slide.visualType === 'qa';
 
   return (
     <div className="w-screen h-screen bg-white text-neutral-900 font-sans overflow-hidden flex flex-col relative">

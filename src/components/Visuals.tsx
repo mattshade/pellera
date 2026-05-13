@@ -512,6 +512,30 @@ export function VisualRenderer({ slide }: VisualProps) {
         </motion.div>
       );
 
+    case 'qa':
+      return (
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="relative w-full h-full flex flex-col justify-center items-center overflow-hidden bg-neutral-50/50">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
+            <motion.div 
+              animate={{ 
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="w-[800px] h-[800px] rounded-full bg-purple-200/50 blur-[150px]"
+            />
+          </div>
+          
+          <motion.div variants={itemVariants} className="z-10 text-center relative flex flex-col items-center">
+            <h1 className="text-[14rem] font-bold tracking-tighter text-neutral-900 leading-none bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 drop-shadow-sm mb-4">
+              Q&A
+            </h1>
+            <div className="h-2 w-32 bg-purple-600 rounded-full mb-12"></div>
+            <p className="text-2xl text-neutral-600 font-light tracking-wide">{slide.headline}</p>
+          </motion.div>
+        </motion.div>
+      );
+
     default:
       return <div className="p-8 text-neutral-400">Visual visualization missing.</div>;
   }
